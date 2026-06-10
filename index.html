@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HERA</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- css 연결 -->
+    <link rel="stylesheet" href="responsive.css" />
+    <!-- a미디어쿼리 연결 -->
+    <script src="script.js" defer></script>
+    <!-- 자바스크립트 연결 -->
+    <!-- preconnect (한 번만) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ✅ Pretendard CDN (모든 기기 적용) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+
+    <!-- 구글폰트 아이콘 + Playfair Display + Gowun Batang -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- 리믹스 아이콘 연결 -->
+  </head>
+
+  <body>
+    <div class="wrap">
+      <!--===========  타이틀  ==============-->
+      <section class="title">
+        <!-- HERA 텍스트 -->
+        <div class="title-name">
+          <span>HERA</span>
+        </div>
+
+        <!-- 로고 -->
+        <div class="title-logo">
+          <a href="#"><img src="logo.png" alt="로고" /></a>
+        </div>
+
+        <!-- 검색창 -->
+        <div class="search">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="제품명 또는 키워드 검색"
+          />
+          <i class="ri-search-line" id="searchIcon"></i>
+        </div>
+      </section>
+
+      <!--============  메인 메뉴 ============-->
+      <div class="nav-section">
+        <nav>
+          <ul>
+            <li><a href="#">헤라스토리</a></li>
+            <li><a href="#">메이크업</a></li>
+            <li><a href="#">스킨케어</a></li>
+            <li><a href="#">프래그런스</a></li>
+            <li><a href="#">기프트</a></li>
+            <li><a href="#">#HERA</a></li>
+          </ul>
+
+          <!--=========== 서브 메뉴 ==============-->
+          <div class="menu-2">
+            <div class="sub-container">
+              <ul>
+                <li><a href="#">브랜드 소개</a></li>
+                <li><a href="#">헤라 크루</a></li>
+                <li><a href="#">캠페인 라이브러리</a></li>
+                <li><a href="#">App 이용방법</a></li>
+              </ul>
+              <ul>
+                <li><a href="#">페이스</a></li>
+                <li><a href="#">립</a></li>
+                <li><a href="#">아이</a></li>
+              </ul>
+              <ul>
+                <li><a href="#">제품 라인</a></li>
+                <li><a href="#">제품전체</a></li>
+                <li><a href="#">클렌징</a></li>
+                <li><a href="#">시그니아</a></li>
+                <li><a href="#">에이지 어웨이</a></li>
+                <li><a href="#">하이드로 리플렉팅</a></li>
+                <li><a href="#">하이드로-듀 플럼핑</a></li>
+                <li><a href="#">옴므</a></li>
+                <li><a href="#">UV프로덱터</a></li>
+                <li><a href="#">컴피</a></li>
+              </ul>
+              <ul>
+                <li><a href="#">제품라인</a></li>
+                <li><a href="#">제품 전체</a></li>
+                <li><a href="#">지일</a></li>
+                <li><a href="#">벨벳 나이트</a></li>
+                <li><a href="#">페르소프</a></li>
+              </ul>
+              <ul>
+                <li></li>
+              </ul>
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!--================== 메인 배너 ==============-->
+      <div class="banner-container">
+        <!-- 슬라이드 1 -->
+        <div class="banner-slide-item active">
+          <a href="#">
+            <img src="main_banner_2.png" alt="Banner Image 3" />
+          </a>
+          
+          <!-- 슬라이드2 텍스트 오버레이 -->
+          <div class="text-overlay">
+            <div class="text-box-2">
+              <div class="s2-text-2">
+                <span>속부터 촘촘하게 차오르는 고결한 빛</span>
+              </div>
+              <div class="s2-text-3">
+                <a href="#"><span>VIEW MORE +</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 슬라이드2 -->
+        <div class="banner-slide-item">
+          <a href="#">
+            <img src="main_banner_3.png" alt="Banner Image 2" />
+          </a>
+        </div>
+
+        <!-- 슬라이드3 -->
+        <div class="banner-slide-item">
+          <img src="main_banner_1.png" alt="메인배너" />
+
+          <!-- 슬라이드3 텍스트 오버레이 -->
+          <div class="text-overlay">
+            <div class="text-box">
+              <div class="text-bg"><span>LIMITED EDITION</span></div>
+              <div class="text-1"><span>SILKY UNLIMITED</span></div>
+              <div class="text-2">
+                <span>시즌 한정 리미티드 파운데이션을 지금 만나보세요!</span>
+              </div>
+              <div class="text-3">
+                <a href="#"><span>VIEW MORE +</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 이전-다음 버튼 -->
+        <button class="banner-btn banner-btn-prev" aria-label="이전 슬라이드">
+          &#8592;
+        </button>
+        <button class="banner-btn banner-btn-next" aria-label="다음 슬라이드">
+          &#8594;
+        </button>
+
+        <!-- 슬라이더 바 -->
+        <div class="banner-indicators">
+          <div class="indicator active"></div>
+          <div class="indicator"></div>
+          <div class="indicator"></div>
+        </div>
+      </div>
+
+      <!--================= 블랙쿠션 제목 ===============-->
+      <div class="title-balckcushion scroll-fade">
+        <div class="blackcushion-text">BLACK CUSHION</div>
+      </div>
+
+      <!-- 블랙쿠션 텍스트 -->
+      <section class="blackcushion-main scroll-fade">
+        <div class="bc-container">
+          <!-- 이미지-텍스트 감싸는 wrapper -->
+          <div class="bc-wrapper">
+            <img src="black_cusion.png" alt="#" class="bc-img" />
+
+            <!-- 텍스트 오버레이 -->
+            <div class="bc-text-container">
+              <div class="bc-text-box-1 fade-in-up">
+                <div class="new"><span>NEW</span></div>
+                <div class="ayerless"><span>Ayerless Matte</span></div>
+              </div>
+              <div class="bc-text-box-2 fade-in-up">
+                <div class="explanation">
+                  <span
+                    >레이어리스 텍스처의<br />
+                    초밀착 핏팅감</span
+                  >
+                </div>
+              </div>
+              <div class="bc-text-box-3 fade-in-up">
+                <div class="all"><span>ALL</span></div>
+                <div class="Highend"><span>Highend Stay</span></div>
+              </div>
+              <div class="bc-text-box-4 fade-in-up">
+                <div class="explanation">
+                  <span
+                    >초밀착 고커버 <br />
+                    뭉침 없는 매트 <br />
+                    커버닝 없는 컬러</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 하단 텍스트 -->
+          <div class="comment">
+            <div class="container">
+              <div class="text">
+                <span>시간이 흘러도 하루종일 아름다운 피부결</span>
+              </div>
+              <i class="ri-arrow-right-double-fill"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--================  서브배너 이미지  ===============-->
+      <section class="sub-banner">
+        <div class="container">
+          <img src="sub_banner.png" alt="서브배너" class="sub-banner-img" />
+        </div>
+
+        <!-- 텍스트 -->
+        <div class="text-box">
+          <div class="text">
+            <a href="#"><p>쿼드 아이컬러 & 파우더 매트 리퀴드</p></a>
+          </div>
+        </div>
+      </section>
+
+      <!--================= 베스트 아이템 =================-->
+      <section class="best-collection scroll-fade">
+        <div class="best-container">
+          <div class="text-container">
+            <div class="best"><span>BEST</span></div>
+            <div class="collection"><span>#collection</span></div>
+            <div class="under-bar"></div>
+            <div class="b-explanation">
+              <span>헤라의 다양한 베스트 아이템을 만나보세요!</span>
+            </div>
+          </div>
+
+          <!-- 베스트 아이템 상품리스트 -->
+          <div class="product-list-section">
+            <div class="product-list-container">
+              <!-- 왼쪽 화살표 -->
+              <div class="icon">
+                <a href="#">
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <polyline
+                      points="22,13 15,20 22,27"
+                      stroke="#c5a059"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="arrow"
+                    />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- ✅ 상품 카드 1 -->
+              <div class="product-card">
+                <a href="#"><img src="1.png" alt="#" class="product-img" /></a>
+                <div class="product-name">
+                  <a href="#"
+                    ><span
+                      >실키 스테이 24H 롱웨어 파운데이션 SPF 20 / PA++</span
+                    ></a
+                  >
+                </div>
+                <div class="product-price">
+                  <div class="text"><span>15%</span></div>
+                  <div class="text"><span>57,800</span></div>
+                  <div class="text text-1"><span>68,000</span></div>
+                </div>
+                <div class="product-icons">
+                  <a href="#"><i class="ri-shopping-bag-line"></i></a>
+                  <a href="#"><i class="ri-heart-line"></i></a>
+                </div>
+              </div>
+
+              <!-- ✅ 상품 카드 2 -->
+              <div class="product-card">
+                <a href="#"><img src="2.png" alt="#" class="product-img" /></a>
+                <div class="product-name">
+                  <a href="#"><span>시그니아 코어 리프팅 세럼</span></a>
+                </div>
+                <div class="product-price">
+                  <div class="text"><span>15%</span></div>
+                  <div class="text"><span>34,000</span></div>
+                  <div class="text text-1"><span>40,000</span></div>
+                </div>
+                <div class="product-icons">
+                  <a href="#"><i class="ri-shopping-bag-line"></i></a>
+                  <a href="#"><i class="ri-heart-line"></i></a>
+                </div>
+              </div>
+
+              <!-- ✅ 상품 카드 3 -->
+              <div class="product-card">
+                <a href="#"><img src="3.png" alt="#" class="product-img" /></a>
+                <div class="product-name">
+                  <a href="#"><span>UV프로텍터 톤업 SPF50+/PA++++</span></a>
+                </div>
+                <div class="product-price">
+                  <div class="text"><span>15%</span></div>
+                  <div class="text"><span>38,250</span></div>
+                  <div class="text text-1"><span>45,000</span></div>
+                </div>
+                <div class="product-icons">
+                  <a href="#"><i class="ri-shopping-bag-line"></i></a>
+                  <a href="#"><i class="ri-heart-line"></i></a>
+                </div>
+              </div>
+
+              <!-- ✅ 상품 카드 4 -->
+              <div class="product-card">
+                <a href="#"><img src="4.png" alt="#" class="product-img" /></a>
+                <div class="product-name">
+                  <a href="#"><span>센슈얼 피팅 글로우 틴트</span></a>
+                </div>
+                <div class="product-price">
+                  <div class="text"><span>15%</span></div>
+                  <div class="text"><span>34,000</span></div>
+                  <div class="text text-1"><span>40,000</span></div>
+                </div>
+                <div class="product-icons">
+                  <a href="#"><i class="ri-shopping-bag-line"></i></a>
+                  <a href="#"><i class="ri-heart-line"></i></a>
+                </div>
+              </div>
+
+              <!-- 오른쪽 화살표 -->
+              <div class="icon">
+                <a href="#">
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <polyline
+                      points="18,13 25,20 18,27"
+                      stroke="#c5a059"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="arrow"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- ✅ product-list-section 끝 -->
+        </div>
+      </section>
+      <!-- ✅ best-container, best-collection 닫힘 -->
+
+      <!--====================== 헤라 모멘츠 ====================-->
+      <section class="share-moments scroll-fade">
+        <!-- HERA Share your #HERA moments!-GALLERY -->
+        <div class="share-moments-container">
+          <div class="img img-1">
+            <div class="text-box">
+              <div class="text-list">
+                <div class="sm-text sm-text-1"><span>HERA</span></div>
+                <div class="sm-text"><span>Share your</span></div>
+                <div class="sm-text"><span>#HERA moments!</span></div>
+                <a href="#">
+                  <div class="sm-text sm-text-4"><span>GALLERY</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 이미지 -->
+          <a href="#">
+            <img src="moments_1.png" alt="" class="img-2" />
+          </a>
+
+          <div class="img-box img-box-1">
+            <a href="#"><img src="moments_2.png" alt="" class="img img-3" /></a>
+            <a href="#"><img src="moments_3.png" alt="" class="img img-4" /></a>
+          </div>
+
+          <div class="img-box img-box-2">
+            <a href="#"><img src="moments_4.png" alt="" class="img img-5" /></a>
+            <a href="#"><img src="moments_5.png" alt="" class="img img-6" /></a>
+          </div>
+        </div>
+      </section>
+
+      <!--====================== 푸터 =======================-->
+      <section class="footer scroll-fade">
+        <div class="container">
+          <!-- sns 아이콘 -->
+          <div class="icon-box">
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+            <a href="#"><i class="ri-tiktok-fill"></i></a>
+            <a href="#"><i class="ri-youtube-fill"></i></a>
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-kakao-talk-fill"></i></a>
+            <a href="#"><i class="ri-map-pin-fill"></i></a>
+          </div>
+
+          <!-- 유틸리티 메뉴바 -->
+          <div class="text-container">
+            <div class="text">
+              <a href="#" target="_self"><span>서비스이용약관</span></a>
+            </div>
+            <div class="text">
+              <a href="#" target="_self"><span>UGC이용약관</span></a>
+            </div>
+            <div class="text">
+              <a href="#" target="_self"
+                ><span><strong> 개인정보처리방침</strong></span></a
+              >
+            </div>
+            <div class="text">
+              <a href="#" target="_self"><span>영상정보처리방침</span></a>
+            </div>
+            <div class="text">
+              <a href="#" target="_self"><span>뷰티포인트</span></a>
+            </div>
+            <div class="text">
+              <a href="#" target="_self"><span>사이트맵</span></a>
+            </div>
+            <div class="text">
+              <a href="#" target="_self"><span>LANGUEGE 한국/한국어</span></a>
+            </div>
+            <a href="#"><i class="ri-kakao-talk-line"></i></a>
+          </div>
+
+          <!-- 고객상담 -->
+          <div class="text-container-2">
+            <p>
+              고객상담팀(수신자요금부담) 080-023-5454 (상담시간 월~금 : AM 09:00
+              ~ PM 06:00)
+            </p>
+          </div>
+          <div class="blank"></div>
+
+          <!-- 마무리 멘트 -->
+          <div class="text-container-3">
+            <p>© AMOREPACIFIC CORPORATION. All rights reserved.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

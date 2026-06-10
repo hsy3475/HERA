@@ -1,0 +1,1098 @@
+/* 이중 스크롤 완전 제거 - overflow clip 사용 */
+html {
+  overflow-x: clip;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  background-color: #fff;
+  font-family: "Pretendard", sans-serif;
+}
+li {
+  list-style-type: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+}
+.wrap {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow-x: clip;
+}
+
+/*
+메인 #2e070c
+서브 #f5f2ed 타이틀 배경색 연베이지
+텍스트 #e5d6be
+포인트 #C5A059 골드
+*/
+
+/*===================== 타이틀 =======================*/
+
+.title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: clamp(50px, 5vw, 70px);
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+/* HERA */
+.title-name {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: clamp(40px, 5vw, 60px);
+  margin-left: 5%;
+  transform: translateY(-50%);
+}
+.title-name > span {
+  display: inline-block;
+  font-family: Georgia, serif;
+  font-size: clamp(19px, 2.5vw, 32px);
+  font-weight: bold;
+  color: #c5a059;
+  letter-spacing: 3px;
+  transform: scaleY(1.5);
+  transform-origin: center;
+}
+
+/* 로고 */
+.title-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(80px, 7%, 134px);
+  height: clamp(50px, 5vw, 70px);
+  overflow: hidden;
+}
+.title-logo > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+.title-logo > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 검색 */
+.search {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: clamp(80px, 7%, 134px);
+  height: clamp(40px, 5vw, 60px);
+  margin-right: 5%;
+  transform: translateY(-50%);
+}
+
+/* 검색창 */
+.search-input {
+  width: 0;
+  padding: 0;
+  border: none;
+  border-bottom: 1.5px solid #c5a059;
+  background: transparent;
+  outline: none;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: clamp(11px, 1vw, 14px);
+  color: #c5a059;
+  opacity: 0;
+  transition:
+    width 0.4s ease,
+    opacity 0.4s ease,
+    padding 0.4s ease;
+}
+
+/* 검색창 오픈 */
+.search-input.open {
+  width: clamp(120px, 15vw, 180px);
+  padding: 4px 8px;
+  opacity: 1;
+}
+.search i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  height: 100%;
+  font-size: clamp(22px, 2vw, 28px);
+  color: #c5a059;
+  cursor: pointer;
+  transition:
+    font-size 0.2s ease,
+    color 0.2s ease;
+}
+.search i:hover {
+  font-size: clamp(24px, 2.2vw, 30px);
+  color: #e5d6be;
+}
+
+/*=======================  메인 메뉴  ======================*/
+
+.nav-section {
+  position: relative;
+  z-index: 12;
+  margin-top: clamp(50px, 5vw, 70px);
+}
+nav {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: clamp(40px, 4vw, 50px);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav > ul > li {
+  /* ✅ 나눔스퀘어OTF_ac → 'Nanum Square Round'로 교체 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(90px, 8.6%, 165px);
+  height: clamp(40px, 4vw, 50px);
+  margin: 0 clamp(4px, 0.5%, 10px);
+  font-size: clamp(13px, 1.2vw, 16px);
+  font-weight: bold;
+  color: #c5a059;
+  transition:
+    font-size 0.3s ease,
+    color 0.2s ease;
+}
+nav > ul > li > a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+nav > ul > li:hover {
+  font-size: clamp(13.5px, 1.25vw, 16.5px);
+  color: #e5d6be;
+}
+
+/*========================== 서브 메뉴 ========================*/
+
+.menu-2 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease;
+}
+.sub-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #8d8270d8;;
+}
+.sub-container > ul {
+  width: clamp(90px, 8.6%, 165px);
+  margin: 0 clamp(4px, 0.5%, 10px);
+  padding: clamp(6px, 0.8vw, 10px);
+  list-style: none;
+  text-align: center;
+}
+.sub-container > ul > li {
+  margin: 0 auto;
+  padding: clamp(6px, 0.8vw, 10px);
+  font-size: clamp(13px, 1.2vw, 16px);
+  color: #e8e0d5;
+  letter-spacing: -0.05em;
+  transition:
+    font-size 0.3s ease,
+    font-weight 0.3s ease,
+    color 0.3s ease;
+}
+.sub-container > ul > li > a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.menu-2.open {
+  max-height: 500px;
+  opacity: 1;
+}
+/* 서브메뉴 호버 */
+.sub-container > ul > li:hover {
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: bold;
+}
+
+/* =================== 메인 배너 =============== */
+
+.banner-container {
+  position: relative;
+  bottom: 32px;
+  width: 100%;
+  margin-top: 32px;
+  aspect-ratio: 1920 / 640;
+  overflow: hidden;
+}
+
+/* 슬라이드 */
+.banner-slide-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.5s ease-in-out;
+}
+
+/* 슬라이드 1 활성화 */
+.banner-slide-item.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 슬라이드 1-2 이미지 */
+.banner-slide-item > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 슬라이드 3 이미지 */
+.banner-slide-item > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 슬라이드2 텍스트 오버레이 */
+.text-box-2 {
+  position: absolute;
+  top: 65%;
+  left: 8%;
+  z-index: 10;
+  width: fit-content;
+  transform: translateY(-50%);
+}
+.s2-text-2 {
+  margin-top: 10px;
+}
+.s2-text-2 > span {
+  font-size: clamp(10px, 1.2vw, 16px);
+  font-weight: bold;
+  color: #beae90;
+}
+.s2-text-3 {
+  display: inline-block;
+  width: clamp(80px, 7vw, 110px);
+  height: clamp(28px, 3vw, 40px);
+  margin-top: 15px;
+  border-radius: 30px;
+  box-shadow: 0 0 0 1px #beae90;
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+}
+.s2-text-3 > a > span {
+  font-size: clamp(10px, 1vw, 13px);
+  line-height: clamp(28px, 3vw, 40px);
+  color: #beae90;
+  transition: color 0.2s ease;
+}
+.s2-text-3:hover {
+  font-weight: bold;
+  box-shadow: 0 0 0 2px #c59f5993;
+}
+/* 호버 시 글씨 색 변경 */
+.s2-text-3:hover > a > span {
+  color: #c5a059;
+}
+
+/* 슬라이드 3 텍스트 오버레이 */
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.text-overlay > .text-box {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  z-index: 10;
+  width: fit-content;
+  padding: clamp(16px, 2.5vw, 30px) clamp(20px, 3vw, 40px);
+  border: 1px solid #808080;
+  transform: translateY(-50%);
+}
+.text-bg {
+  padding-bottom: 10px;
+}
+.text-bg > span {
+  font-size: clamp(12px, 1.2vw, 18px);
+  font-weight: bold;
+  color: #808080;
+}
+.text-overlay > .text-box > .text-1 {
+  margin-top: -15px;
+}
+.text-overlay > .text-box > .text-1 > span {
+  font-size: clamp(20px, 4vw, 60px);
+  font-weight: 700;
+  color: #afafaf;
+  white-space: nowrap;
+}
+.text-overlay > .text-box > .text-2 {
+  margin-top: 10px;
+}
+.text-overlay > .text-box > .text-2 > span {
+  font-size: clamp(10px, 1.2vw, 16px);
+  font-weight: bold;
+  color: #808080;
+}
+.text-overlay > .text-box > .text-3 {
+  display: inline-block;
+  width: clamp(80px, 7vw, 110px);
+  height: clamp(28px, 3vw, 40px);
+  margin-top: 15px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 0 1px #808080;
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+}
+.text-overlay > .text-box > .text-3 > a > span {
+  font-size: clamp(10px, 1vw, 13px);
+  line-height: clamp(28px, 3vw, 40px);
+  color: #808080;
+}
+.text-overlay > .text-box > .text-3:hover {
+  font-weight: bold;
+  box-shadow: 0 0 0 2px #808080;
+}
+
+/* 이전-다음 버튼 */
+.banner-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(10px, 1vw, 13px);
+  height: clamp(10px, 1vw, 13px);
+  border: none;
+  border-radius: 50%;
+  background-color: #666666;
+  font-size: 0;
+  opacity: 0.45;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease;
+}
+.banner-btn:hover {
+  width: clamp(12px, 1.1vw, 15px);
+  height: clamp(12px, 1.1vw, 15px);
+  opacity: 1;
+}
+.banner-btn-prev {
+  left: clamp(10px, 1.5vw, 20px);
+}
+.banner-btn-next {
+  right: clamp(10px, 1.5vw, 20px);
+}
+
+/* 슬라이더 바 */
+.banner-indicators {
+  position: absolute;
+  bottom: clamp(10px, 1.5vw, 20px);
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  gap: clamp(4px, 0.6vw, 8px);
+  transform: translateX(-50%);
+}
+.indicator {
+  width: clamp(24px, 2.5vw, 40px);
+  height: 4px;
+  border-radius: 2px;
+  background-color: #666666;
+  opacity: 0.45;
+  cursor: pointer;
+  transition:
+    width 0.3s ease,
+    opacity 0.3s ease;
+}
+.indicator.active {
+  width: clamp(36px, 3.5vw, 60px);
+  opacity: 1;
+}
+
+/*=================== 블랙쿠션 ===================== */
+
+.title-balckcushion {
+  margin-top: 5%;
+}
+.blackcushion-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 10px;
+  font-family: Georgia, serif;
+  font-size: clamp(20px, 4vw, 55px);
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: #c5a059;
+  transform: scaleY(1.2);
+}
+
+/* 블랙쿠션 상품 설명 */
+.blackcushion-main {
+  width: 100%;
+  margin: 0 auto;
+}
+.blackcushion-main > .container {
+  width: 90%;
+  max-width: 1550px;
+  margin: 0 auto;
+}
+
+/* 이미지+텍스트 감싸는 wrapper */
+.bc-wrapper {
+  position: relative;
+  width: 100%;
+}
+.bc-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 텍스트 오버레이 */
+.bc-wrapper > .bc-text-container {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  min-width: clamp(120px, 15%, 200px);
+}
+.bc-wrapper > .bc-text-container > .bc-text-box-1 {
+  display: flex;
+  width: 100%;
+}
+.new > span {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(18px, 2.5vw, 30px);
+  font-weight: bold;
+  color: #c5a059;
+}
+.ayerless {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+.ayerless > span {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(18px, 2.5vw, 30px);
+  color: #e8e0d5;
+}
+.bc-wrapper > .bc-text-container > .bc-text-box-2 {
+  padding-top: 20px;
+}
+.explanation {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  font-size: clamp(12px, 1.2vw, 16px);
+  color: #e8e0d5;
+  line-height: clamp(5px, 8.1vw, 36px);
+  text-align: end;
+}
+.bc-wrapper > .bc-text-container > .bc-text-box-3 {
+  display: flex;
+  width: 100%;
+  padding-top: 50px;
+}
+.all > span {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(18px, 2vw, 34px);
+  font-weight: bold;
+  color: #c5a059;
+}
+.Highend {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+.Highend > span {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(18px, 2.5vw, 30px);
+  color: #e8e0d5;
+}
+.bc-wrapper > .bc-text-container > .bc-text-box-4 {
+  padding-top: 20px;
+}
+
+/* 하단 텍스트 */
+.comment {
+  width: 100%;
+  margin-top: clamp(6px, 0.8vw, 10px);
+}
+.comment > .container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.comment > .container > .text {
+  /* 시간이 흘러도 아름다운 피부결 */
+  font-size: clamp(12px, 1.5vw, 16px);
+  font-weight: bold;
+  color: #c5a059;
+}
+.comment > .container > i {
+  display: inline-block;
+  padding: clamp(3px, 0.4vw, 5px);
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: bold;
+  color: #c5a059;
+  transition:
+    font-size 0.3s ease,
+    color 0.3s ease;
+}
+.comment > .container > i:hover {
+  font-size: clamp(22px, 2.1vw, 28px);
+  color: #e5d6be;
+}
+
+/* 블랙쿠션 텍스트 페이드 인 */
+.fade-in-up {
+  opacity: 0;
+  transform: translateX(60px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fade-in-up:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.fade-in-up:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.fade-in-up:nth-child(4) {
+  transition-delay: 0.45s;
+}
+
+/* ====================== 서브 배너 ==================== */
+
+.sub-banner {
+  position: relative;
+  width: 100%;
+  margin-top: 5%;
+  overflow: hidden;
+}
+.sub-banner > .container {
+  width: 100%;
+  margin: 0 auto;
+}
+.sub-banner-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 서브 배너 이미지 텍스트 */
+.sub-banner > .text-box {
+  width: 100%;
+  max-width: 1920px;
+  margin: 10px 0 auto;
+}
+.sub-banner > .text-box > .text {
+  height: 30px;
+}
+.sub-banner > .text-box > .text > a > p {
+  margin-top: 0 !important;
+  font-size: clamp(12px, 1.5vw, 16px);
+  font-weight: bold;
+  color: #c5a059;
+  letter-spacing: clamp(0.7px, 1vw, 0.8px);
+  text-align: center;
+  transition:
+    font-size 0.3s ease,
+    font-weight 0.3s ease,
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+/* 서브배너 텍스트 호버 */
+.sub-banner > .text-box > .text > a:hover > p {
+  font-weight: bold;
+  color: #e5d6be;
+}
+
+/*======================== 베스트 아이템 =========================*/
+
+.best-collection {
+  width: 100%;
+  margin: 5% auto 0;
+}
+.best-container {
+  width: 90%;
+  max-width: 1550px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* 베스트 콜렉션-다양한 아이템 만나보세요 */
+.best-container > .text-container {
+  width: 100%;
+  max-width: 522px;
+  padding-top: 7%;
+}
+.best {
+  margin-left: clamp(20px, 3%, 51px);
+}
+.best > span {
+  display: inline-block; /* transform 적용을 위해 필요 */
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(24px, 4vw, 55px);
+  font-weight: 800;
+  color: #c5a059;
+  padding-bottom: 10px;
+  transform: scaleY(1.3);
+}
+.collection {
+  margin-bottom: clamp(8px, 1.5vw, 10px);
+  margin-left: clamp(20px, 3%, 51px);
+}
+.collection > span {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(16px, 2.5vw, 36px);
+  font-weight: 500;
+  color: #c5a059;
+}
+.under-bar {
+  width: clamp(180px, 25%, 360px);
+  margin-bottom: clamp(4px, 0.6vw, 8px);
+  margin-left: clamp(20px, 3%, 51px);
+  border-bottom: 1px solid #c5a059;
+}
+.b-explanation {
+  margin-left: clamp(20px, 3%, 51px);
+}
+.b-explanation > span {
+  font-size: clamp(13px, 1.2vw, 16px);
+  color: #c5a059;
+}
+
+/*=============== 베스트 아이템 상품리스트 =================*/
+
+.product-list-section {
+  width: 100%;
+  margin: 10% auto 0;
+}
+
+/* 상품 카드 묶음 컨테이너 */
+.product-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* center → flex-start: 각 카드 위쪽 정렬 */
+}
+
+/* 이전-다음 버튼 */
+.product-list-container > .icon > a > svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: clamp(24px, 3vw, 40px);
+  height: clamp(24px, 3vw, 40px);
+}
+.arrow {
+  transition:
+    stroke 0.2s ease,
+    stroke-width 0.2s ease;
+}
+.product-list-container > .icon:hover .arrow {
+  stroke: #e5d6be;
+  stroke-width: 5px;
+}
+
+/* 상품 카드 - 이미지+텍스트+가격+아이콘 하나로 묶음 */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 22%;
+  max-width: 347px;
+  margin: 0 1%;
+}
+
+/* 상품 이미지 a태그 */
+.product-card > a {
+  display: block;
+  width: 100%;
+  overflow: hidden; /* 확대될 때 삐져나오지 않게 */
+}
+
+/* 상품 이미지 */
+.product-img {
+  width: 100%;
+  aspect-ratio: 347 / 430;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* 호버 시 확대 */
+.product-card > a:hover > .product-img {
+  transform: scale(1.05);
+}
+
+/* 상품 리스트 텍스트 */
+.product-card > .product-name {
+  width: 100%;
+  margin-top: clamp(6px, 0.8vw, 10px);
+  padding: clamp(3px, 0.4vw, 5px) clamp(6px, 0.8vw, 10px);
+  color: #c5a059;
+  text-align: center;
+}
+.product-card > .product-name > a {
+  font-size: clamp(12px, 1.2vw, 15px);
+  letter-spacing: clamp(0.1px, 0.3vw, 0.5px);
+  transition:
+    font-size 0.3s ease,
+    color 0.2s ease;
+}
+.product-card > .product-name > a:hover {
+  font-size: clamp(12.5px, 1.25vw, 15.5px);
+  color: #e5d6be;
+}
+
+/* 상품 가격 */
+.product-card > .product-price {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: clamp(3px, 0.4vw, 5px) 0;
+}
+.product-card > .product-price > .text {
+  margin: 0 clamp(4px, 0.8%, 10px);
+  font-weight: bold;
+  color: #c5a059;
+}
+.product-card > .product-price > .text > span {
+  font-size: clamp(13px, 1.2vw, 16px);
+  letter-spacing: -1px;
+}
+.product-card > .product-price > .text-1 {
+  font-size: clamp(12px, 1vw, 15px);
+  font-weight: 300;
+  line-height: 27px;
+  text-decoration: line-through;
+}
+
+/* 아이콘 */
+.product-card > .product-icons {
+  display: flex;
+  justify-content: center;
+  gap: clamp(6px, 1vw, 12px);
+  margin-top: clamp(6px, 0.8vw, 10px);
+}
+.product-card > .product-icons > a > i {
+  display: inline-block;
+  padding: clamp(5px, 0.6vw, 8px);
+  font-size: clamp(18px, 1.8vw, 22px);
+  color: #c5a059;
+  transition: color 0.2s ease;
+}
+.product-card > .product-icons > a > i:hover {
+  color: #e5d6be;
+}
+.product-card > .product-icons > a > i.ri-shopping-bag-fill.active {
+  color: #c5a059;
+}
+.product-card > .product-icons > a > i.ri-heart-fill.active {
+  color: #e05555;
+}
+
+/* 기존 클래스 호환성 유지 (데스크탑용 구버전) */
+.product-text-1,
+.product-text-container,
+.product-text-2,
+.product-icon {
+  display: none; /* 카드 구조로 대체되므로 숨김 */
+}
+
+/*================== 헤라 모멘츠 ===================*/
+
+.share-moments {
+  width: 100%;
+  margin: 15% auto 0;
+  overflow: hidden;
+}
+.share-moments-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 0 1%;
+  gap: 1%;
+}
+
+/* HERA-Share your */
+.share-moments-container > .img-1 {
+  position: relative;
+  flex: 0 0 22%;
+  max-width: 435px;
+  height: auto;
+  aspect-ratio: 435 / 570;
+  background-color: #f5f2ed;
+}
+.share-moments-container > .img-1 > .text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 0;
+}
+.text-list {
+  text-align: center;
+}
+.sm-text {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(15px, 10vw, 17px);
+  color: #c5a059;
+  margin-bottom: clamp(3px, 0.4vw, 5px);
+}
+.sm-text-1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(14px, 2vw, 32px);
+  margin-bottom: clamp(12px, 2vw, 25px);
+}
+
+/* 갤러리 */
+.sm-text-4 {
+  display: inline-block;
+  padding: clamp(8px, 1.2vw, 20px) clamp(14px, 2.2vw, 40px);
+  margin-top: clamp(12px, 2vw, 20px);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(11px, 1.2vw, 18px);
+  color: #c5a059;
+  white-space: nowrap;
+  text-align: center;
+  border: 1px solid #c5a059;
+  border-radius: 50%;
+  transition:
+    border 0.2s ease,
+    font-weight 0.2s ease,
+    color 0.2s ease;
+}
+.sm-text-4:hover {
+  font-weight: bold;
+  color: #e5d6be;
+  border: 1.5px solid #e5d6be;
+}
+
+/* 큰 이미지 */
+.img-2 {
+  display: block;
+  flex: 0 0 35%;           /* 32% → 35% */
+  max-width: 600px;        /* 540px → 600px */
+  height: auto;
+  aspect-ratio: 600 / 1000;  /* 540/860 → 600/1000 세로 더 늘림 */
+  object-position: center top;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+/* 작은 이미지 묶음 박스 */
+.img-box {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 18%;
+  max-width: 280px;
+  gap: 1%;
+}
+/* img-box a overflow 숨김 */
+.img-box > a {
+  overflow: hidden;
+}
+.share-moments-container > .img-box > a > .img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 280 / 415;
+  object-fit: cover;
+}
+.img-box-1 > a > .img,
+.img-box-2 > a > .img {
+  object-fit: cover; /* 위에서 이미 선언했지만 margin 때문에 유지 */
+  margin-bottom: clamp(12px, 2vw, 26px);
+}
+
+/* 이미지 트랜지션 */
+.img-2,
+.img-box > a > .img {
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+/* 컨테이너 호버 시 모든 이미지 불투명 */
+.share-moments-container.hovered .img-2,
+.share-moments-container.hovered .img-box > a > .img {
+  opacity: 0.4;
+}
+
+/* 호버된 이미지만 확대 + 불투명 해제 */
+.share-moments-container.hovered .img-2.focused,
+.share-moments-container.hovered .img-box > a.focused > .img {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/*======================== 푸터 =======================*/
+
+.footer {
+  width: 100%;
+  height: auto;
+  min-height: clamp(180px, 18vw, 250px);
+  margin: 8% auto 0;
+  padding-top: 30px;
+  padding-bottom: clamp(12px, 1.5vw, 20px);
+  background-color: #fff;
+  color: #c5a059;
+}
+
+/* sns 아이콘 */
+.icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: clamp(40px, 2vw, 40px);
+  margin: 0 auto;
+  gap: clamp(10px, 2vw, 70px);
+}
+.icon-box > a {
+  width: 40px;
+  height: 100%;
+  flex-grow: 0;
+  text-align: center;
+}
+.icon-box i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 33px;
+  transition: color 0.3s ease;
+}
+.icon-box i:hover {
+  color: #e8e0d5;
+}
+
+/* 유틸리티 메뉴바 */
+.footer > .container > .text-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: clamp(30px, 3.5vw, 40px);
+  margin-top: clamp(12px, 1.8vw, 20px);
+  gap: clamp(4px, 0.6vw, 8px);
+}
+.footer > .container > .text-container > .text {
+  margin-left: clamp(10px, 2%, 30px);
+  font-size: clamp(11px, 1vw, 14px);
+  transition: font-weight 0.2s ease;
+}
+.footer > .container > .text-container > .text:hover {
+  font-weight: bold;
+}
+.text-container > a > svg {
+  display: flex;
+  align-items: center;
+  margin-left: clamp(16px, 2.5vw, 30px);
+  background-color: #009223;
+}
+
+/* 고객상담 */
+.text-container-2 {
+  margin-top: clamp(12px, 1.8vw, 20px);
+  text-align: center;
+}
+.text-container-2 > p {
+  font-size: clamp(11px, 1vw, 14px);
+}
+.blank {
+  margin: clamp(16px, 2.5vw, 30px) 0;
+}
+
+/* 마무리 멘트 */
+.text-container-3 {
+  border: 1px solid;
+  text-align: center;
+}
+.text-container-3 > p {
+  font-size: clamp(10px, 1vw, 14px);
+  letter-spacing: clamp(3px, 0.8vw, 10px);
+}
+
+/*====================== 전체 스크롤 페이드인 ==================*/
+
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

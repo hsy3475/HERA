@@ -1,0 +1,659 @@
+/* =====================================================
+   반응형 미디어 쿼리
+   1600px → 1400px → 1200px → 1024px → 768px
+   ===================================================== */
+
+/* ==================== 1600px ==================== */
+@media (max-width: 1600px) {
+  /* 타이틀 */
+  .title-name > span {
+    font-size: clamp(17px, 2.2vw, 28px);
+  }
+
+  /* 메인 메뉴 */
+  nav > ul > li {
+    width: clamp(80px, 8%, 140px);
+    font-size: clamp(12px, 1.1vw, 15px);
+  }
+  .sub-container > ul > li {
+    font-size: clamp(11px, 1.1vw, 14px);
+  }
+
+  /* 블랙쿠션 */
+  .bc-wrapper > .bc-text-container {
+    width: 22%;
+  }
+
+  /* 베스트 아이템 */
+  .product-card {
+    width: 22%;
+  }
+
+  /* 헤라 모멘츠 */
+  .share-moments-container > .img-1 {
+    flex: 0 0 20%;
+  }
+  .img-2 {
+    flex: 0 0 26%;
+  }
+  .img-box {
+    flex: 0 0 17%;
+  }
+}
+
+/* ==================== 1400px ==================== */
+@media (max-width: 1400px) {
+  /* 타이틀 */
+  .title {
+    height: clamp(48px, 5vw, 65px);
+  }
+  .title-name > span {
+    font-size: clamp(16px, 2vw, 26px);
+    letter-spacing: 2px;
+  }
+  .title-logo {
+    width: clamp(70px, 7%, 120px);
+  }
+
+  /* 메인 메뉴 */
+  nav > ul > li {
+    width: clamp(75px, 7.5%, 130px);
+    font-size: clamp(11px, 1vw, 14px);
+    margin: 0 clamp(3px, 0.4%, 8px);
+  }
+
+  /* 배너 */
+  .text-overlay > .text-box > .text-1 > span {
+    font-size: clamp(18px, 3.5vw, 52px);
+  }
+
+  /* 블랙쿠션 */
+  .blackcushion-text {
+    font-size: clamp(18px, 3.5vw, 48px);
+  }
+  .bc-wrapper > .bc-text-container {
+    width: 24%;
+    right: 4%;
+  }
+  .new > span,
+  .ayerless > span {
+    font-size: clamp(16px, 2.2vw, 26px);
+  }
+  .all > span {
+    font-size: clamp(16px, 1.8vw, 28px);
+  }
+  .Highend > span {
+    font-size: clamp(16px, 2.2vw, 26px);
+  }
+
+  /* 베스트 아이템 */
+  .best > span {
+    font-size: clamp(22px, 3.5vw, 48px);
+  }
+  .collection > span {
+    font-size: clamp(14px, 2.2vw, 30px);
+  }
+  .product-card {
+    width: 22%;
+    margin: 0 0.8%;
+  }
+
+  /* 헤라 모멘츠 */
+  .share-moments-container > .img-1 {
+    flex: 0 0 20%;
+  }
+  .img-2 {
+    flex: 0 0 25%;
+  }
+  .img-box {
+    flex: 0 0 16%;
+  }
+}
+
+/* ==================== 1200px ==================== */
+@media (max-width: 1200px) {
+  /* 타이틀 */
+  .title-name > span {
+    font-size: clamp(15px, 1.8vw, 22px);
+    letter-spacing: 2px;
+  }
+  .search i {
+    font-size: clamp(20px, 1.8vw, 24px);
+  }
+
+  /* 메인 메뉴 */
+  nav > ul > li {
+    width: clamp(70px, 7%, 115px);
+    font-size: clamp(10px, 0.95vw, 13px);
+    margin: 0 clamp(2px, 0.3%, 6px);
+  }
+  .sub-container > ul > li {
+    font-size: clamp(10px, 1vw, 13px);
+    padding: clamp(5px, 0.7vw, 8px);
+  }
+
+  /* 배너 */
+  .text-overlay > .text-box {
+    right: 6%;
+    padding: clamp(12px, 2vw, 24px) clamp(14px, 2.2vw, 30px);
+  }
+  .text-overlay > .text-box > .text-1 > span {
+    font-size: clamp(16px, 3vw, 44px);
+  }
+  .s2-text-2 > span {
+    font-size: clamp(10px, 1.1vw, 14px);
+  }
+
+  /* 블랙쿠션 */
+  .blackcushion-text {
+    font-size: clamp(16px, 3vw, 42px);
+  }
+  .bc-wrapper > .bc-text-container {
+    width: 26%;
+    right: 3%;
+  }
+  .new > span,
+  .ayerless > span {
+    font-size: clamp(14px, 1.9vw, 22px);
+  }
+  .all > span {
+    font-size: clamp(14px, 1.6vw, 24px);
+  }
+  .Highend > span {
+    font-size: clamp(14px, 1.9vw, 22px);
+  }
+  .explanation {
+    font-size: clamp(10px, 1vw, 13px);
+  }
+  .bc-wrapper > .bc-text-container > .bc-text-box-3 {
+    padding-top: 30px;
+  }
+
+  /* 베스트 아이템 */
+  .best > span {
+    font-size: clamp(20px, 3vw, 42px);
+  }
+  .collection > span {
+    font-size: clamp(13px, 2vw, 26px);
+  }
+  .b-explanation > span {
+    font-size: clamp(11px, 1vw, 14px);
+  }
+  .product-card {
+    width: 22%;
+    margin: 0 0.6%;
+  }
+  .product-card > .product-name > a {
+    font-size: clamp(10px, 1vw, 13px);
+  }
+  .product-card > .product-price > .text > span {
+    font-size: clamp(11px, 1vw, 14px);
+  }
+
+  /* 헤라 모멘츠 */
+  .sm-text {
+    font-size: clamp(13px, 1.4vw, 16px);
+  }
+  .sm-text-1 {
+    font-size: clamp(12px, 1.8vw, 26px);
+  }
+  .sm-text-4 {
+    font-size: clamp(10px, 1vw, 14px);
+    padding: clamp(6px, 1vw, 16px) clamp(10px, 1.8vw, 30px);
+  }
+
+  /* 푸터 */
+  .icon-box i {
+    font-size: 28px;
+  }
+  .footer > .container > .text-container > .text {
+    font-size: clamp(10px, 0.9vw, 13px);
+  }
+}
+
+/* ==================== 1024px ==================== */
+@media (max-width: 1024px) {
+  /* 타이틀 */
+  .title {
+    height: 50px;
+  }
+  .title-name > span {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+  }
+  .title-logo {
+    width: 80px;
+    height: 50px;
+  }
+  .search {
+    width: 80px;
+    height: 50px;
+  }
+  .search i {
+    font-size: 20px;
+  }
+  .search-input.open {
+    width: 120px;
+  }
+
+  /* 메인 메뉴 */
+  .nav-section {
+    margin-top: 50px;
+  }
+  nav > ul > li {
+    width: clamp(60px, 7%, 100px);
+    height: 40px;
+    font-size: 11px;
+    margin: 0 2px;
+  }
+  .sub-container > ul > li {
+    font-size: 11px;
+    padding: 6px;
+  }
+
+  /* 배너 */
+  .banner-container {
+    aspect-ratio: 1920 / 720;
+  }
+  .text-overlay > .text-box {
+    right: 5%;
+    padding: 12px 16px;
+  }
+  .text-overlay > .text-box > .text-1 > span {
+    font-size: clamp(14px, 2.5vw, 36px);
+  }
+  .text-overlay > .text-box > .text-2 > span {
+    font-size: clamp(9px, 1vw, 13px);
+  }
+  .s2-text-2 > span {
+    font-size: 12px;
+  }
+  .s2-text-3 {
+    width: 80px;
+    height: 28px;
+  }
+
+  /* 블랙쿠션 */
+  .blackcushion-text {
+    font-size: clamp(14px, 2.5vw, 36px);
+    letter-spacing: 2px;
+  }
+  .blackcushion-main > .container {
+    width: 95%;
+  }
+  .bc-wrapper > .bc-text-container {
+    width: 28%;
+    right: 2%;
+    min-width: 160px;
+  }
+  .new > span,
+  .ayerless > span {
+    font-size: clamp(13px, 1.6vw, 18px);
+  }
+  .all > span {
+    font-size: clamp(13px, 1.4vw, 18px);
+  }
+  .Highend > span {
+    font-size: clamp(13px, 1.6vw, 18px);
+  }
+  .explanation {
+    font-size: clamp(9px, 0.9vw, 12px);
+  }
+  .bc-wrapper > .bc-text-container > .bc-text-box-3 {
+    padding-top: 20px;
+  }
+  .bc-wrapper > .bc-text-container > .bc-text-box-2,
+  .bc-wrapper > .bc-text-container > .bc-text-box-4 {
+    padding-top: 12px;
+  }
+
+  /* 베스트 아이템 */
+  .best-container {
+    width: 95%;
+  }
+  .best > span {
+    font-size: clamp(18px, 2.5vw, 36px);
+  }
+  .collection > span {
+    font-size: clamp(12px, 1.8vw, 22px);
+  }
+  .product-list-container > .icon > a > svg {
+    width: 24px;
+    height: 24px;
+  }
+  .product-card {
+    width: 23%;
+    margin: 0 0.5%;
+  }
+  .product-card > .product-name > a {
+    font-size: 11px;
+  }
+  .product-card > .product-price > .text > span {
+    font-size: 11px;
+  }
+  .product-card > .product-icons > a > i {
+    font-size: 16px;
+    padding: 4px;
+  }
+
+  /* 헤라 모멘츠 */
+  .share-moments-container {
+    gap: 0.8%;
+    padding: 0 0.8%;
+  }
+  .share-moments-container > .img-1 {
+    flex: 0 0 18%;
+  }
+  .img-2 {
+    flex: 0 0 26%;
+  }
+  .img-box {
+    flex: 0 0 16%;
+  }
+  .sm-text {
+    font-size: 13px;
+  }
+  .sm-text-1 {
+    font-size: clamp(11px, 1.5vw, 20px);
+  }
+  .sm-text-4 {
+    font-size: 10px;
+    padding: 8px 14px;
+  }
+
+  /* 푸터 */
+  .footer {
+    min-height: 180px;
+  }
+  .icon-box {
+    gap: clamp(8px, 1.5vw, 40px);
+  }
+  .icon-box i {
+    font-size: 26px;
+  }
+  .footer > .container > .text-container > .text {
+    font-size: 10px;
+    margin-left: 8px;
+  }
+  .text-container-2 > p {
+    font-size: 10px;
+  }
+  .text-container-3 > p {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+}
+
+/* ==================== 768px ==================== */
+@media (max-width: 768px) {
+  /* 타이틀 */
+  .title {
+    height: 48px;
+  }
+  .title-name > span {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .title-logo {
+    width: 70px;
+    height: 48px;
+  }
+  .search {
+    height: 48px;
+  }
+  .search i {
+    font-size: 18px;
+  }
+  .search-input.open {
+    width: 100px;
+    font-size: 10px;
+  }
+
+  /* 메인 메뉴 - 가로 스크롤 */
+  .nav-section {
+    margin-top: 48px;
+    overflow-x: auto;
+  }
+  nav > ul {
+    justify-content: flex-start;
+    height: 38px;
+    padding: 0 10px;
+    width: max-content;
+    min-width: 100%;
+  }
+  nav > ul > li {
+    width: auto;
+    height: 38px;
+    padding: 0 10px;
+    margin: 0 2px;
+    font-size: 11px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .menu-2 {
+    display: none; /* 768px 이하 서브메뉴 숨김 */
+  }
+
+  /* 배너 */
+  .banner-container {
+    aspect-ratio: 4 / 3;
+    margin-top: 16px;
+    bottom: 16px;
+  }
+  .text-overlay > .text-box {
+    right: 4%;
+    top: 50%;
+    padding: 10px 12px;
+  }
+  .text-overlay > .text-box > .text-1 > span {
+    font-size: clamp(12px, 4vw, 28px);
+  }
+  .text-overlay > .text-box > .text-2 > span {
+    font-size: clamp(8px, 1.5vw, 12px);
+  }
+  .text-overlay > .text-box > .text-3 {
+    width: 70px;
+    height: 24px;
+  }
+  .text-overlay > .text-box > .text-3 > a > span {
+    font-size: 9px;
+    line-height: 24px;
+  }
+  .text-box-2 {
+    top: 60%;
+    left: 5%;
+  }
+  .s2-text-2 > span {
+    font-size: 10px;
+  }
+  .s2-text-3 {
+    width: 70px;
+    height: 24px;
+    margin-top: 8px;
+  }
+  .s2-text-3 > a > span {
+    font-size: 9px;
+    line-height: 24px;
+  }
+  .banner-btn {
+    width: 8px;
+    height: 8px;
+  }
+  .indicator {
+    width: 20px;
+    height: 3px;
+  }
+  .indicator.active {
+    width: 30px;
+  }
+
+  /* 블랙쿠션 */
+  .title-balckcushion {
+    margin-top: 8%;
+  }
+  .blackcushion-text {
+    font-size: clamp(12px, 4vw, 28px);
+    letter-spacing: 2px;
+    transform: scaleY(1.1);
+    padding-bottom: 6px;
+  }
+  .blackcushion-main > .container {
+    width: 100%;
+  }
+  .bc-wrapper > .bc-text-container {
+    position: static; /* absolute 해제 */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    padding: 14px 16px;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  .bc-wrapper > .bc-text-container > .bc-text-box-1,
+  .bc-wrapper > .bc-text-container > .bc-text-box-2,
+  .bc-wrapper > .bc-text-container > .bc-text-box-3,
+  .bc-wrapper > .bc-text-container > .bc-text-box-4 {
+    width: 100%;
+    padding-top: 8px;
+  }
+  .bc-wrapper > .bc-text-container > .bc-text-box-3 {
+    padding-top: 14px;
+  }
+  .new > span {
+    font-size: clamp(13px, 3.5vw, 20px);
+  }
+  .ayerless > span {
+    font-size: clamp(13px, 3.5vw, 20px);
+  }
+  .all > span {
+    font-size: clamp(13px, 3vw, 18px);
+  }
+  .Highend > span {
+    font-size: clamp(13px, 3.5vw, 20px);
+  }
+  .explanation {
+    font-size: clamp(10px, 2vw, 13px);
+  }
+  .comment > .container > .text {
+    font-size: clamp(10px, 2vw, 13px);
+  }
+  .comment > .container > i {
+    font-size: clamp(16px, 3vw, 20px);
+  }
+
+  /* 베스트 아이템 */
+  .best-collection {
+    margin-top: 8%;
+  }
+  .best-container {
+    width: 95%;
+  }
+  .best-container > .text-container {
+    padding-top: 5%;
+  }
+  .best > span {
+    font-size: clamp(16px, 5vw, 32px);
+  }
+  .collection > span {
+    font-size: clamp(12px, 3.5vw, 20px);
+  }
+  .b-explanation > span {
+    font-size: clamp(10px, 2vw, 13px);
+  }
+
+  /* 상품 카드 - 2열 */
+  .product-list-section {
+    margin-top: 6%;
+  }
+  .product-list-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  .product-list-container > .icon {
+    display: none; /* 768px 이하 화살표 숨김 */
+  }
+  .product-card {
+    width: 44%;
+    margin: 0;
+  }
+  .product-card > .product-name > a {
+    font-size: clamp(10px, 2vw, 13px);
+  }
+  .product-card > .product-price > .text > span {
+    font-size: clamp(10px, 2vw, 13px);
+  }
+  .product-card > .product-icons > a > i {
+    font-size: 16px;
+  }
+
+  /* 헤라 모멘츠 - 세로 스택 */
+  .share-moments {
+    margin-top: 10%;
+  }
+  .share-moments-container {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 4%;
+  }
+  .share-moments-container > .img-1 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    aspect-ratio: 4 / 2;
+  }
+  .img-2 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+  .img-box {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+  .img-box-1 > a > .img,
+  .img-box-2 > a > .img {
+    margin-bottom: 8px;
+  }
+  .sm-text {
+    font-size: clamp(12px, 3vw, 16px);
+  }
+  .sm-text-1 {
+    font-size: clamp(14px, 4vw, 22px);
+  }
+  .sm-text-4 {
+    font-size: clamp(10px, 2.5vw, 14px);
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+
+  /* 푸터 */
+  .footer {
+    margin-top: 10%;
+    padding-top: 20px;
+  }
+  .icon-box {
+    gap: clamp(8px, 3vw, 30px);
+  }
+  .icon-box i {
+    font-size: 24px;
+  }
+  .footer > .container > .text-container {
+    gap: 4px;
+    padding: 0 10px;
+  }
+  .footer > .container > .text-container > .text {
+    font-size: 10px;
+    margin-left: 6px;
+  }
+  .text-container-2 > p {
+    font-size: 10px;
+    padding: 0 10px;
+  }
+  .text-container-3 > p {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+}
